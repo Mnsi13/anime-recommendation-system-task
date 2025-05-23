@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-5vami^a3)e&-%xw$opukoi-b$6@rn)u6)q7=ozt8+5t$vca&94
 # # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['anime-recommendation-system-task-1.onrender.com']
 
 
 
