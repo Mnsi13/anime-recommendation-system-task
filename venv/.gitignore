@@ -6,19 +6,3 @@
 # venv/
 # .env
 # *.log
-# *.pyc
-# .DS_Store
-
-# Python
-__pycache__/
-*.py[cod]
-*.sqlite3
-db.sqlite3
-
-# Environment
-.env
-venv/
-*.log
-
-# OS
-.DS_Store
