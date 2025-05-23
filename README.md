@@ -4,18 +4,18 @@ This is a REST API service that recommends anime to users based on their genre p
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🔐 JWT Authentication
-- 📖 User Registration & Login
-- 🎯 Search Anime by Name
-- 🎞️ Get Personalized Recommendations (based on user preferences)
-- 🧾 Add/Delete Watched Anime
-- ⚙️ PostgreSQL as backend database
+-  JWT Authentication
+- User Registration & Login
+-  Get Personalized Recommendations (based on user preferences)
+-  Search Anime by Name
+-  Add/Delete Watched Anime
+-  PostgreSQL as backend database
 
 ---
 
-## 🔧 Tech Stack
+##  Tech Stack
 
 - Python 3
 - Django + Django REST Framework
@@ -25,10 +25,11 @@ This is a REST API service that recommends anime to users based on their genre p
 
 ---
 
-## 🛠️ Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/anime-recommendation-api.git
-cd anime-recommendation-api
+git clone https://github.com/Mnsi13/anime-recommendation-system-task.git
+cd anime-recommendation-system-task
+
