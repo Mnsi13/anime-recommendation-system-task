@@ -15,10 +15,9 @@ import dj_database_url
 import os
 
 
+DATABASE_URL = os.environ.get("DATABASE_URL") #yh mene abhi 
 
 
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -31,7 +30,9 @@ SECRET_KEY = 'django-insecure-5vami^a3)e&-%xw$opukoi-b$6@rn)u6)q7=ozt8+5t$vca&94
 # # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['anime-recommendation-system-task-1.onrender.com']
+# ALLOWED_HOSTS = ['anime-recommendation-system-task-1.onrender.com']
+ALLOWED_HOSTS = ['anime-recommendation-system-task-1.onrender.com', '127.0.0.1', 'localhost']
+
 
 
 
@@ -63,6 +64,32 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get("DATABASE_URL")
+#     )
+# }
+
+
+
+if DATABASE_URL:
+    # Render or any production deployment
+    DATABASES = {
+        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
+    }
+else:
+    # Local PostgreSQL settings
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'anime_db',
+            'USER': 'postgres',
+            'PASSWORD': 'admin',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
+
 ROOT_URLCONF = 'anime_recommender.urls'
 
 TEMPLATES = [
@@ -83,24 +110,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'anime_recommender.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'anime_db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'admin',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
-    )
-}
+
+
+
+
 
 
 
