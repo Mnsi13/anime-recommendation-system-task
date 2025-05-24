@@ -1,0 +1,16 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+  <h1>Recommendations for {{ user.username }}</h1>
+  <ul>
+    {% for anime in recommendations %}
+      <li>
+        <strong>{{ anime.title.romaji }}</strong><br>
+        Genres: {{ anime.genres|join:", " }}
+      </li>
+    {% empty %}
+      <li>No recommendations found for this user.</li>
+    {% endfor %}
+  </ul>
+  <br>
+  <a href="/admin/api/user/">← Back to user list</a>
+{% endblock %}
